@@ -72,7 +72,6 @@ extern "C" {
 
 #define Board_SPI0                  EK_TM4C123GXL_SPI0
 #define Board_SPI1                  EK_TM4C123GXL_SPI3
-#define Board_SPI_CC3100            EK_TM4C123GXL_SPI2
 
 #define Board_USBDEVICE             EK_TM4C123GXL_USBDEVICE
 
@@ -81,6 +80,7 @@ extern "C" {
 #define Board_WATCHDOG0             EK_TM4C123GXL_WATCHDOG0
 
 #define Board_WIFI                  EK_TM4C123GXL_WIFI
+#define Board_WIFI_SPI              EK_TM4C123GXL_SPI2
 
 /* Board specific I2C addresses */
 #define Board_TMP006_ADDR           (0x40)

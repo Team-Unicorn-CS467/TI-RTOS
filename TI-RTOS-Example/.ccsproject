@@ -9,7 +9,7 @@
 	<isElfFormat value="true"/>
 	<rts value="libc.a"/>
 	<createSlaveProjects value=""/>
-	<templateProperties value="id=com_ti_rtsc_tirtostivac_example_76.projectspec.empty_EK_TM4C123GXL_TI,type=rtsc,products=com.ti.rtsc.TIRTOStivac,xdcToolsVersion=3_31_01_33_core,target=ti.targets.arm.elf.M4F,platform=ti.platforms.tiva:TM4C123GH6PM,buildProfile=release,isHybrid=true,configuroOptions= --compileOptions &quot;${COMPILER_FLAGS} &quot;"/>
-	<origin value="C:\ti\tirtos_tivac_2_14_04_31\resources\ek_tm4C123GXLEvaluationKit\driverExamples\tiDriverExamples\emptyExamples\com_ti_rtsc_tirtostivac_example_76.projectspec"/>
+	<templateProperties value="id=com_ti_rtsc_tirtostivac_example_78.projectspec.empty_EK_TM4C123GXL_TI,type=rtsc,products=com.ti.rtsc.TIRTOStivac,xdcToolsVersion=3_32_00_06_core,target=ti.targets.arm.elf.M4F,platform=ti.platforms.tiva:TM4C123GH6PM,buildProfile=release,isHybrid=true,configuroOptions= --compileOptions &quot;${COMPILER_FLAGS} &quot;"/>
+	<origin value="C:\ti\ccs1220\tirtos_tivac_2_16_01_14\resources\ek_tm4C123GXLEvaluationKit\driverExamples\tiDriverExamples\emptyExamples\com_ti_rtsc_tirtostivac_example_78.projectspec"/>
 	<filesToOpen value=""/>
 </projectOptions>

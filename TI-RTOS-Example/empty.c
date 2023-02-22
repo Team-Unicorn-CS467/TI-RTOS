@@ -35,11 +35,11 @@
  */
 /* XDCtools Header files */
 #include <xdc/std.h>
-#include <xdc/cfg/global.h>
 #include <xdc/runtime/System.h>
 
 /* BIOS Header files */
 #include <ti/sysbios/BIOS.h>
+#include <ti/sysbios/knl/Task.h>
 
 /* TI-RTOS Header files */
 #include <ti/drivers/GPIO.h>
@@ -53,12 +53,18 @@
 /* Board Header file */
 #include "Board.h"
 
+#define TASKSTACKSIZE   512
+
+Task_Struct task1Struct, task2Struct, task3Struct;
+Char task1Stack[TASKSTACKSIZE], task2Stack[TASKSTACKSIZE], task3Stack[TASKSTACKSIZE];
+Task_Handle task1Handle, task2Handle, task3Handle;
+
 /*
- *  ======== heartBeatFxn ========
+ *  ======== blinky1 ========
  *  Toggle the Board_LED0. The Task_sleep is determined by arg0 which
  *  is configured for the heartBeat Task instance.
  */
-Void heartBeatFxn(UArg arg0, UArg arg1)
+Void blinky1(UArg arg0, UArg arg1)
 {
     while (1) {
         Task_sleep((UInt)arg0);
@@ -66,11 +72,28 @@ Void heartBeatFxn(UArg arg0, UArg arg1)
     }
 }
 
+Void blinky2(UArg arg0, UArg arg1)
+{
+    while (1) {
+        Task_sleep((UInt)arg0);
+        GPIO_toggle(Board_LED1);
+    }
+}
+
+Void blinky3(UArg arg0, UArg arg1)
+{
+    while (1) {
+        Task_sleep((UInt)arg0);
+        GPIO_toggle(Board_LED2);
+    }
+}
 /*
  *  ======== main ========
  */
 int main(void)
 {
+    Task_Params taskParams;
+
     /* Call board init functions */
     Board_initGeneral();
     Board_initGPIO();
@@ -82,6 +105,26 @@ int main(void)
     // Board_initWatchdog();
     // Board_initWiFi();
 
+    /* Construct heartBeat Task  thread */
+    Task_Params_init(&taskParams);
+    taskParams.arg0 = 1000;
+    taskParams.stackSize = TASKSTACKSIZE;
+    taskParams.stack = &task1Stack;
+    taskParams.priority = 1;
+    Task_construct(&task1Struct, (Task_FuncPtr)blinky1, &taskParams, NULL);
+    task1Handle = Task_handle(&task1Struct);
+
+    taskParams.stack = &task2Stack;
+    taskParams.priority = 2;
+    taskParams.arg0 = 2000;
+    Task_construct(&task2Struct, (Task_FuncPtr)blinky2, &taskParams, NULL);
+    task2Handle = Task_handle(&task2Struct);
+
+    taskParams.stack = &task3Stack;
+    taskParams.priority = 3;
+    taskParams.arg0 = 3000;
+    Task_construct(&task3Struct, (Task_FuncPtr)blinky3, &taskParams, NULL);
+    task3Handle = Task_handle(&task3Struct);
     /* Turn on user LED */
     GPIO_write(Board_LED0, Board_LED_ON);
 
