@@ -53,9 +53,16 @@ extern "C" {
 
 #define Board_LED_ON                EK_TM4C123GXL_LED_ON
 #define Board_LED_OFF               EK_TM4C123GXL_LED_OFF
-#define Board_LED0                  EK_TM4C123GXL_LED_BLUE
-#define Board_LED1                  EK_TM4C123GXL_LED_GREEN
-#define Board_LED2                  EK_TM4C123GXL_LED_RED
+#define Board_BLUE                  EK_TM4C123GXL_LED_BLUE
+#define Board_GREEN                  EK_TM4C123GXL_LED_GREEN
+#define Board_RED                  EK_TM4C123GXL_LED_RED
+#define Board_PB3                   EK_TM4C123GXL_PB3
+#define Board_PC4                   EK_TM4C123GXL_PC4
+#define Board_PC5                   EK_TM4C123GXL_PC5
+#define Board_PC6                   EK_TM4C123GXL_PC6
+#define Board_PC7                   EK_TM4C123GXL_PC7
+#define Board_PD6                   EK_TM4C123GXL_PD6
+#define Board_PD7                   EK_TM4C123GXL_PD7
 #define Board_BUTTON0               EK_TM4C123GXL_SW1
 #define Board_BUTTON1               EK_TM4C123GXL_SW2
 
@@ -72,7 +79,6 @@ extern "C" {
 
 #define Board_SPI0                  EK_TM4C123GXL_SPI0
 #define Board_SPI1                  EK_TM4C123GXL_SPI3
-#define Board_SPI_CC3100            EK_TM4C123GXL_SPI2
 
 #define Board_USBDEVICE             EK_TM4C123GXL_USBDEVICE
 
@@ -81,6 +87,7 @@ extern "C" {
 #define Board_WATCHDOG0             EK_TM4C123GXL_WATCHDOG0
 
 #define Board_WIFI                  EK_TM4C123GXL_WIFI
+#define Board_WIFI_SPI              EK_TM4C123GXL_SPI2
 
 /* Board specific I2C addresses */
 #define Board_TMP006_ADDR           (0x40)
