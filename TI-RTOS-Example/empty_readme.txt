@@ -11,7 +11,7 @@ Example Usage
 -------------
 The example lights Board_LED0 as part of the initialization in main().
 Then a heartBeat task toggles the LED at a rate determined by the arg0 parameter
-for the Task instance in the .cfg file.
+for the constructed Task instance in the .c file.
 
 Application Design Details
 --------------------------

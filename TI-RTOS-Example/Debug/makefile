@@ -14,9 +14,9 @@ ORDERED_OBJS += \
 "./empty.obj" \
 "../EK_TM4C123GXL.cmd" \
 $(GEN_CMDS__FLAG) \
--l"C:/ti/tirtos_tivac_2_14_04_31/products/TivaWare_C_Series-2.1.1.71b/grlib/ccs/Debug/grlib.lib" \
--l"C:/ti/tirtos_tivac_2_14_04_31/products/TivaWare_C_Series-2.1.1.71b/usblib/ccs/Debug/usblib.lib" \
--l"C:/ti/tirtos_tivac_2_14_04_31/products/TivaWare_C_Series-2.1.1.71b/driverlib/ccs/Debug/driverlib.lib" \
+-l"C:/ti/ccs1220/tirtos_tivac_2_16_01_14/products/TivaWare_C_Series-2.1.1.71b/grlib/ccs/Debug/grlib.lib" \
+-l"C:/ti/ccs1220/tirtos_tivac_2_16_01_14/products/TivaWare_C_Series-2.1.1.71b/usblib/ccs/Debug/usblib.lib" \
+-l"C:/ti/ccs1220/tirtos_tivac_2_16_01_14/products/TivaWare_C_Series-2.1.1.71b/driverlib/ccs/Debug/driverlib.lib" \
 -llibc.a \
 
 -include ../makefile.init
