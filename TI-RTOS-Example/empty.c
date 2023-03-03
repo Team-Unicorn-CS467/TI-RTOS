@@ -40,6 +40,9 @@
 /* BIOS Header files */
 #include <ti/sysbios/BIOS.h>
 #include <ti/sysbios/knl/Task.h>
+#include <ti/sysbios/hal/Core.h>
+#include <ti/sysbios/hal/Hwi.h>
+#include <ti/sysbios/knl/Idle.h>
 
 /* TI-RTOS Header files */
 #include <ti/drivers/GPIO.h>
@@ -61,6 +64,12 @@ task4Stack[TASKSTACKSIZE], task5Stack[TASKSTACKSIZE], task6Stack[TASKSTACKSIZE];
 
 Task_Handle task1Handle, task2Handle, task3Handle, task4Handle, task5Handle, task6Handle;
 
+Void Idle_blink(UArg arg0, UArg arg1)
+{
+        GPIO_toggle(Board_GREEN);
+        GPIO_toggle(Board_GREEN);
+
+}
 /*
  *  ======== blinky1 ========
  *  Toggle the Board_LED0. The Task_sleep is determined by arg0 which
@@ -116,7 +125,6 @@ Void blinky6(UArg arg0, UArg arg1)
     }
 }
 
-
 /*
  *  ======== main ========
  */
@@ -135,7 +143,6 @@ int main(void)
     // Board_initWatchdog();
     // Board_initWiFi();
 
-    /* Construct heartBeat Task  thread */
     Task_Params_init(&taskParams);
     taskParams.arg0 = 1000;
     taskParams.stackSize = TASKSTACKSIZE;
