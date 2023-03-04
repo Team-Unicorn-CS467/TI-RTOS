@@ -88,15 +88,6 @@ void SysTick_Handler(void)
     GPIO_toggle(Board_PB3);
 }
 
-
-////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
 Task_Struct task1Struct, task2Struct, task3Struct, task4Struct, task5Struct, task6Struct;
 Char task1Stack[TASKSTACKSIZE], task2Stack[TASKSTACKSIZE], task3Stack[TASKSTACKSIZE],
 task4Stack[TASKSTACKSIZE], task5Stack[TASKSTACKSIZE], task6Stack[TASKSTACKSIZE];
