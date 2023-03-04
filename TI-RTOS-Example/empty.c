@@ -167,19 +167,19 @@ int main(void)
     taskParams.priority = 4;
     taskParams.arg0 = 1000;
     Task_construct(&task4Struct, (Task_FuncPtr)blinky4, &taskParams, NULL);
-    task3Handle = Task_handle(&task4Struct);
+    task4Handle = Task_handle(&task4Struct);
 
     taskParams.stack = &task5Stack;
     taskParams.priority = 5;
     taskParams.arg0 = 1000;
     Task_construct(&task5Struct, (Task_FuncPtr)blinky5, &taskParams, NULL);
-    task3Handle = Task_handle(&task5Struct);
+    task5Handle = Task_handle(&task5Struct);
 
     taskParams.stack = &task6Stack;
     taskParams.priority = 6;
     taskParams.arg0 = 1000;
     Task_construct(&task6Struct, (Task_FuncPtr)blinky6, &taskParams, NULL);
-    task3Handle = Task_handle(&task6Struct);
+    task6Handle = Task_handle(&task6Struct);
 
     /* SysMin will only print to the console when you call flush or exit */
     System_flush();
