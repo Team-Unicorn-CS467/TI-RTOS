@@ -1,0 +1,16 @@
+
+**** Build of configuration Debug for project test ****
+
+"C:\\ti\\ccs1220\\ccs\\utils\\bin\\gmake" -k -j 16 all -O 
+ 
+Building file: "../empty.cfg"
+Invoking: XDCtools
+"C:/ti/ccs1220/xdctools_3_62_01_16_core/xs" --xdcpath= xdc.tools.configuro -o configPkg -r debug -c "C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS" "../empty.cfg"
+subdir_rules.mk:19: recipe for target 'build-842810465-inproc' failed
+js: "C:/ti/ccs1220/xdctools_3_62_01_16_core/packages/xdc/tools/Cmdr.xs", line 52: Error: xdc.tools.configuro: Error: no target named: please use -t, -b, or --cb
+gmake[1]: *** [build-842810465-inproc] Error 1
+gmake: *** [build-842810465] Error 2
+subdir_rules.mk:16: recipe for target 'build-842810465' failed
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
